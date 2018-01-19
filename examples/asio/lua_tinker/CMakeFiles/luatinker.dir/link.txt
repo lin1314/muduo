@@ -1,0 +1,2 @@
+/usr/bin/ar qc libluatinker.a  CMakeFiles/luatinker.dir/lua_tinker.cpp.o CMakeFiles/luatinker.dir/lua_bind.cpp.o
+/usr/bin/ranlib libluatinker.a

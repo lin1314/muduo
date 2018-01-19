@@ -214,8 +214,10 @@ void Thread::start()
   }
   else
   {
+    LOG_INFO << "try start thread at latch_.wait";
     latch_.wait();
     assert(tid_ > 0);
+    LOG_INFO << "start a thread " << tid_;
   }
 }
 

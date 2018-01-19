@@ -20,7 +20,7 @@ class ChatClient : boost::noncopyable
  public:
   ChatClient(EventLoop* loop, const InetAddress& serverAddr)
     : client_(loop, serverAddr, "ChatClient"),
-      codec_(boost::bind(&ChatClient::onStringMessage, this, _1, _2, _3))
+      codec_(boost::bind(&ChatClient::onMessageQueue, this, _1))
   {
     client_.setConnectionCallback(
         boost::bind(&ChatClient::onConnection, this, _1));
@@ -66,12 +66,15 @@ class ChatClient : boost::noncopyable
     }
   }
 
-  void onStringMessage(const TcpConnectionPtr&,
-                       const string& message,
-                       Timestamp)
-  {
-    printf("<<< %s\n", message.c_str());
+  void onMessageQueue(const MessageQueuePtr& messageQueue) {
+
   }
+  // void onStringMessage(const TcpConnectionPtr&,
+                       // const string& message,
+                       // Timestamp)
+  // {
+    // printf("<<< %s\n", message.c_str());
+  // }
 
   TcpClient client_;
   LengthHeaderCodec codec_;

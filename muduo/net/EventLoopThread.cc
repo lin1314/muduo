@@ -9,6 +9,7 @@
 #include <muduo/net/EventLoopThread.h>
 
 #include <muduo/net/EventLoop.h>
+#include <muduo/base/Logging.h>
 
 #include <boost/bind.hpp>
 
@@ -44,6 +45,8 @@ EventLoop* EventLoopThread::startLoop()
   assert(!thread_.started());
   thread_.start();
 
+  LOG_INFO << "EventLoopThread startLoop()";
+
   {
     MutexLockGuard lock(mutex_);
     while (loop_ == NULL)
@@ -59,6 +62,7 @@ void EventLoopThread::threadFunc()
 {
   EventLoop loop;
 
+  LOG_INFO <<  "In threadFunc";
   if (callback_)
   {
     callback_(&loop);
