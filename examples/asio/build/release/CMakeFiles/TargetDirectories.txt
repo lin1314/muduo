@@ -1,4 +1,0 @@
-/home/ljy/proj/ljy/muduo/examples/asio/build/release/CMakeFiles/edit_cache.dir
-/home/ljy/proj/ljy/muduo/examples/asio/build/release/CMakeFiles/rebuild_cache.dir
-/home/ljy/proj/ljy/muduo/examples/asio/build/release/CMakeFiles/asio_chat_server.dir
-/home/ljy/proj/ljy/muduo/examples/asio/build/release/CMakeFiles/asio_chat_client.dir
