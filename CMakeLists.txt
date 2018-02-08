@@ -16,7 +16,7 @@ set(CXX_FLAGS
  -D_FILE_OFFSET_BITS=64
  -Wall
  -Wextra
- -Werror
+ # -Werror
  # -Wconversion
  -Wno-unused-parameter
  # -Wold-style-cast
@@ -94,13 +94,14 @@ message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_T
 
 add_subdirectory(muduo/base)
 add_subdirectory(muduo/net)
+add_subdirectory(src/chat)
 
-if(NOT CMAKE_BUILD_NO_EXAMPLES)
-  add_subdirectory(contrib)
-  add_subdirectory(examples)
-else()
-  if(CARES_INCLUDE_DIR AND CARES_LIBRARY)
-    add_subdirectory(examples/cdns)
-  endif()
-endif()
+# if(NOT CMAKE_BUILD_NO_EXAMPLES)
+  # add_subdirectory(contrib)
+  # add_subdirectory(examples)
+# else()
+  # if(CARES_INCLUDE_DIR AND CARES_LIBRARY)
+    # add_subdirectory(examples/cdns)
+  # endif()
+# endif()
 
